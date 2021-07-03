@@ -18,7 +18,13 @@
                 <p class="card-text"><?php echo $listconfirm['alamat_confirm']; ?></p>
                 <p class="card-text">jumlah: <?php echo $listconfirm['jumlah_pesanan']; ?></p>
                 <h5 class="card-title">Status: <?php echo $listconfirm['status_confirm']; ?></h5>
-                <a href="ubah_status.php?id=<?php echo $listconfirm['id_confirm']; ?>" class="btn btn-primary">Ubah status</a>
+                <?php
+                if ($listconfirm['status_confirm'] == 'Diproses') {
+                ?>
+                    <a href="ubah_status.php?id=<?php echo $listconfirm['id_confirm']; ?>" class="btn btn-primary">Ubah status</a>
+                <?php
+                }
+                ?>
             </div>
         </div>
     <?php

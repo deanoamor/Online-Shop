@@ -20,13 +20,18 @@ $id = $_SESSION['id_user'];
 $editwallet = $_SESSION['wallet'];
 $tambahwallet = $_POST["walletplus"];
 
-if ($tambahwallet > 0) {
-    $hasil = $editwallet + $tambahwallet;
-    $query = mysqli_query($koneksi, "UPDATE user set wallet = '$hasil' WHERE id_user = '$id'");
-    $_SESSION['wallet'] = $hasil;
-    header("location:profile.php");
+if (!preg_match("/^[0-9]*$/", $tambahwallet)) {
+    header("location:profile.php?info=walletangka");
 } else {
-    $query = mysqli_query($koneksi, "UPDATE user set wallet = '$tambahwallet' WHERE id_user = '$id'");
-    header("location:profile.php");
+    if ($tambahwallet > 0) {
+        $hasil = $editwallet + $tambahwallet;
+        $query = mysqli_query($koneksi, "UPDATE user set wallet = '$hasil' WHERE id_user = '$id'");
+        $_SESSION['wallet'] = $hasil;
+        header("location:profile.php");
+    } else {
+        $query = mysqli_query($koneksi, "UPDATE user set wallet = '$tambahwallet' WHERE id_user = '$id'");
+        header("location:profile.php");
+    }
 }
+
 ?>

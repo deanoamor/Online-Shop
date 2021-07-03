@@ -17,7 +17,17 @@
                 <h6 class="card-title">Rp <?php echo $listconfirm['harga_confirm']; ?></h6>
                 <p class="card-text"><?php echo $listconfirm['alamat_confirm']; ?></p>
                 <p class="card-text">jumlah: <?php echo $listconfirm['jumlah_pesanan']; ?></p>
-                <a href="" class="btn btn-primary"><?php echo $listconfirm['status_confirm']; ?></a>
+                <?php
+                if ($listconfirm['status_confirm'] == 'Diproses') {
+                ?>
+                    <a href="" class="btn btn-primary"><?php echo $listconfirm['status_confirm']; ?></a>
+                <?php
+                } else {
+                ?>
+                    <a href="" class="btn btn-warning"><?php echo $listconfirm['status_confirm']; ?></a>
+                <?php
+                }
+                ?>
                 <?php
                 if ($listconfirm['status_confirm'] == 'Dikirim') {
                 ?>

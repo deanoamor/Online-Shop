@@ -43,6 +43,23 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="walletplus" aria-describedby="emailHelp" required>
                             </div>
+                            <?php
+                            if (isset($_GET['info'])) {
+                                if ($_GET['info'] == "walletangka") {
+                            ?>
+                                    <div class="container">
+                                        <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                                            <strong>Maaf</strong> Input hanya boleh angka
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                            <?php
+
+                                }
+                            }
+                            ?>
                             <button class="btn btn-primary">Top up</button>
                         </form>
                     </div>

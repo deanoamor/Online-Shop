@@ -14,8 +14,52 @@
                 <!-- #Iklan Box-->
                 <?php
                 if (isset($_GET['info'])) {
-                    $info = $_GET['info'];
-                    echo '<p>' . $info . '</p>';
+                    if ($_GET['info'] == "duitkurang") {
+                ?>
+                        <div class="container">
+                            <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                                <strong>Maaf</strong> Duit anda kurang
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    <?php
+
+                    } else if ($_GET['info'] == "jumlahpesanan") {
+                    ?>
+                        <div class="container">
+                            <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                                <strong>Maaf</strong> jumlah pesanan tidak boleh 0
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    <?php
+                    } else if ($_GET['info'] == "terbeli") {
+                    ?>
+                        <div class="container">
+                            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                                <strong>Sukses</strong> Barang berhasil terbeli
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    <?php
+                    } else if ($_GET['info'] == "inputangka") {
+                    ?>
+                        <div class="container">
+                            <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                                <strong>Maaf</strong> Input hanya boleh angka
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                <?php
+                    }
                 }
                 ?>
                 <!-- #Iklan Box -->
